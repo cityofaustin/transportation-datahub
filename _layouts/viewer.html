@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  {% include head.html %}
+  <body class="d-flex flex-column">
+    {% include nav.html %}
+    <div class="container-fluid flex-grow-1" id="dash-container">
+      <div class="d-flex flex-column h-100">
+        <div class="row">
+          <div class="col">
+            <h3 class="text-dts-4 mb-0">Traffic Signal Projects</h3>
+            <p class="text-small border-left border-dts-6 pl-2">
+              Some info blah blah about this page which is going to be really
+              important for people.
+            </p>
+          </div>
+        </div>
+        <div class="row" id="spinner">
+          <div class="col-12 mx-auto">
+            <div class="spinner-grow text-dts-6 mx-auto" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row d-none flex-grow-1" id="data-row">
+          {% include map-overlay.html %} {% include map.html %}
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid d-none d-md-block">
+      <div class="row bg-dark text-white"><div class="col"><p>footer hidden on mobile!</p></div></div></div>
+    {% if page.custom_js %} {% for js_file in page.custom_js %}
+    <script
+      src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"
+      type="text/javascript"
+    ></script>
+    {% endfor %} {% endif %}
+  </body>
+</html>

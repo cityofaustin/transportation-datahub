@@ -1,0 +1,27 @@
+<div class="col-lg-5 col-xl-5 my-lg-2 my-md-none py-2 mx-lg-2 position-absolute bg-white" id="map-overlay-col">
+  {% if page.table_filters %}
+  <div class="row no-gutters" id="filter-buttons">
+    {% endif %}
+
+    <!-- filter buttons go here with custom js -->
+  </div>
+  {% if page.table_search %} {% include search.html%} {% endif %} {% include
+  map-card.html %}
+  <div class="row">
+    <div class="col-lg-12 d-none" id="data-table-parent">
+      <table
+        class="table table-sm table-hover compact bg-white"
+        data-sort-name="address"
+        data-sort-order="desc"
+        id="data-table"
+      >
+        <thead>
+          <!-- table headers go here with custom js -->
+        </thead>
+        <tbody>
+          <!-- table rows here with custom js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

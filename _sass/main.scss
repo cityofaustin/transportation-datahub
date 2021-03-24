@@ -1,0 +1,116 @@
+// see
+// https://docs.google.com/spreadsheets/d/1IcOfkEFfc6_I_wlHSknsOzHGEzb89q-d/edit#gid=1138231532
+$theme-colors: (
+  "dts-1": #607d8f,
+  "dts-2": #87b1c7,
+  "dts-3": #162a4b,
+  "dts-4": #0d3e79,
+  "dts-5": #02708b,
+  "dts-6": #00c0a1,
+  "dts-7": #f0fc6c,
+  "dts-8": #ff7062,
+  "dts-9": #ff988f,
+  "dts-10": #ffc2bd,
+  "dts-11": #ffe1df,
+);
+
+@media only screen and (min-width: 768px) {
+  .navbar-menu-border {
+    border-style: none solid none none;
+    border-color: #00bfa5;
+    border-width: 1px;
+  }
+}
+
+html, body { height: 100vh; }
+
+#data-table tr {
+  cursor: pointer;
+}
+
+.dataTables_scrollHead {
+  display: none;
+}
+
+#map-overlay-col {
+  z-index: 99;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 2px #ccc;
+}
+
+.status-badge {
+  white-space: pre;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px gray;
+  color: #fff;
+}
+
+.status-badge-design {
+  white-space: pre;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px gray;
+  color: #fff;
+  background-color: #7570b3;
+}
+
+.status-badge-construction {
+  white-space: pre;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px gray;
+  color: #fff;
+  background-color: #d95f02;
+}
+
+.status-badge-turned_on {
+  white-space: pre;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px gray;
+  color: #fff;
+  background-color: #1b9e77;
+}
+
+
+.mapboxgl-canvas:focus {
+  outline: none;
+}
+
+.mapboxgl-popup-content {
+  background-color: #0d3e79 !important;
+  color: #fff;
+}
+
+.filter-button {
+  border-radius: 2px;
+  color:  rgb(138, 138, 138);
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.filter-button:hover {
+  border: 1px solid #0d3e79;
+}
+
+.filter-button:active {
+  box-shadow: inset 0 0 4px 0px rgb(49, 49, 49);
+}
+
+.filter-button[checked="checked"]:active {
+  box-shadow: inset 0 0 6px 0px #000;
+}
+
+.filter-button[checked="checked"]:hover {
+  border: 1px solid lightgray;
+}
+
+.filter-button[checked="checked"] {
+  // border-bottom: 5px solid #ff7062;
+  background-color: #0d3e79;
+  color: white;
+  border: none;
+  box-shadow: inset 0 0 5px 0px rgb(68, 68, 68);
+}
+
+@import "bootstrap/bootstrap";

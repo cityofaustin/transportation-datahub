@@ -4,7 +4,8 @@ module.exports = {
   context: path.resolve(__dirname, "webpackjs"),
   // webpack folder’s entry js — excluded from jekll’s build process.
   entry: {
-    micromobility: "./micromobility-data.js"
+    micromobility: "./micromobility-data.js",
+    signal_projects: "./signal-projects.js",
   },
   output: {
     // we’re going to put the generated file in the assets folder so jekyll will grab it.
@@ -13,7 +14,7 @@ module.exports = {
     // path: "./components/js/",
     // filename: "bundle.js"
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "webpackjs/output")
+    path: path.resolve(__dirname, "assets/js"),
   },
   mode: "development",
   devtool: "inline-source-map",
@@ -22,7 +23,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-        resolve: { extensions: [".js", ".jsx", ".css"] } //add '.css' "root": __dirname
+        resolve: { extensions: [".js", ".jsx", ".css"] }, //add '.css' "root": __dirname
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -36,38 +37,40 @@ module.exports = {
               outputPath: "images",
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                quality: 65,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
-                enabled: false
+                enabled: false,
               },
               pngquant: {
                 quality: "65-90",
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
-                interlaced: false
+                interlaced: false,
               },
               // the webp option will enable WEBP
               webp: {
-                quality: 75
-              }
-            }
-          }
-        ]
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: "file-loader?name=[name].[ext]" // <-- retain original file name
-      }
-    ]
-  }
+        use: {
+          loader: "file-loader?name=[name].[ext]", // <-- retain original file name
+        },
+      },
+    ],
+  },
 };

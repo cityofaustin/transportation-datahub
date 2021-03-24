@@ -8,8 +8,8 @@ description: ""
 url: "https://data.mobility.austin.gov"
 
 author:
-  name: ""
-  url: ""
+  name: "Austin Transportation Data & Technology Services"
+  url: "https://austinmobility.io"
 
 # Custom vars
 version: 0.0.0
