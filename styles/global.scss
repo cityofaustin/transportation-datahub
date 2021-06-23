@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* see: https://getbootstrap.com/docs/4.0/getting-started/theming/#functions */
+@function theme-color($key: "primary") {
+    @return map-get($theme-colors, $key);
+}
+
+$theme-colors: (
+    "primary": #0b3e79,
+    "secondary": #00bfa5,
+    "dts-1": #5f7d8c,
+    "dts-2": #86b1c6,
+    "dts-3": #162b4c,
+    "dts-4": #007089,
+    "dts-5": #f2fc6d,
+    "dts-6": #ff7261,
+    "dts-7": #ff9a8e,
+    "dts-8": #ffc3bb,
+    "dts-9": #ffe2df,
+);
+
+body {
+    font-family: IBM Plex Sans, sans-serif !important;
+}
+
+.form-check-input:checked {
+    background-color: theme-color("primary") !important;
+    border-color: theme-color("dts-4") !important;
+}
+
+.navbar-toggle {
+    /* Use !important to override BootStrap class */
+    border: none !important;
+}
+
+#filter-button-toggle {
+    color: #fff !important;
+    font-size: 1em;
+    background-color: theme-color("dts-4") !important;
+}
+
+.react-date-picker__wrapper {
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+}
+
+.status-badge {
+    border-radius: 5px;
+    box-shadow: 1px 1px #888888;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right:  5px;
+    padding-left:  5px;
+}
+
+.map-overlay-container {
+    position: absolute;
+    width: 100%;
+    z-index: 999999;
+    font-size: 0.75em;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 0px dimgray !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-menu-borders {
+        border-style: none none none solid;
+        border-color: theme-color("secondary");
+        border-width: 1px;
+    }
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
